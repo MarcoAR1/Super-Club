@@ -1,14 +1,12 @@
 .productCard {
-  display: flex;
   background-color: white;
+  display: flex;
   gap: 10px;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
   width: 244px;
   height: 328px;
-  left: 20px;
-  top: 20px;
   padding: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 16px;
