@@ -973,7 +973,13 @@ h1 {
   width: 12rem;
 }
 
-.warning-text {
+.warning-text{
   font-size: 1rem;
-  color: var(--rojo);
+  color: red;
+}
+
+.success-text{
+  font-size: 1.4rem;
+  color: green;
+  margin-bottom: 0.5rem;
 }
