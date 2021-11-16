@@ -4,5 +4,23 @@
       "usuario": "magui",
       "email": "magui.cerisola@gmail.com",
       "password": "$2a$10$jjFdEB2TD7owZGdt7MuHxOIoYJK9lfyB.elL67U2L8ZYhBK0TnL.6"
+   },
+   {
+      "id": 2,
+      "usuario": "nicky",
+      "email": "nb@gmail.com",
+      "password": "$2a$10$WIto70ta6gkOHAcJwM1UquaBk1voBxB37V.5OKXajpC/YKERCKd5u"
+   },
+   {
+      "id": 3,
+      "usuario": "tadeo",
+      "email": "tadeo@gmail.com",
+      "password": "$2a$10$RocWUbo4/9juqHLAuQapVeGL.ZzDpcnj4XG/uVDSzAJj0LDiEyGs."
+   },
+   {
+      "id": 4,
+      "usuario": "agus.bernal",
+      "email": "agusb@gmail.com",
+      "password": "$2a$10$6r.E7am6sy3ZPOYMsBuXbO8YTbXkqBoOU5c8/xyBLp3V8MT9Memzu"
    }
 ]

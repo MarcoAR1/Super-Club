@@ -1,4 +1,4 @@
-const { validationResult } = require("express-validator");
+const { validationResult, check } = require("express-validator");
 const user = require("../models/User");
 const bcrypt = require("bcrypt");
 
@@ -16,19 +16,26 @@ const controller = {
             });
         } else {
             let users = user.obtenerUsuarios();
-            for (let i = 0; i < users.length; i++) {
-                if (
-                    users[i].email == req.body.email &&
-                    bcrypt.compareSync(req.body.password, users[i].password)
-                ) {
-                    req.session.loggedUser = users[i];
+            let findUser = users.find((user) => user.email == req.body.email);
+            if (findUser) {
+                if (bcrypt.compareSync(req.body.password, findUser.password)) {
+                    console.log("entra");
+                    req.session.loggedUser = findUser;
                     return res.redirect(req.session?.history?.prev || "/");
+                } else {
+                    return res.render("pages/login", {
+                        errors: {
+                            password: {
+                                msg: "Las credenciales no son válidas",
+                            },
+                        },
+                    });
                 }
-            }
-            if (!req.session.loggedUser) {
+            } else {
                 return res.render("pages/login", {
-                    errors: errors.mapped(),
-                    old: req.body,
+                    errors: {
+                        email: { msg: "No existe un usuario con este email." },
+                    },
                 });
             }
         }
