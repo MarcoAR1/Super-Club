@@ -15,7 +15,7 @@ const controller = {
                 old: req.body,
             });
         } else {
-            // let users=user.obtenerUsuarios()
+            let users=user.obtenerUsuarios()
             for (let i = 0; i < users.length; i++) {
                 if (users[i].email == req.body.email)
                     if (req.body.password == users[i].password) {
