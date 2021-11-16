@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
-const fs = require("fs");
-const path = require("path");
+const user = require("../models/User");
+const bcrypt = require("bcrypt");
 
 const controller = {
     getLogin: (req, res) => {
@@ -15,13 +15,15 @@ const controller = {
                 old: req.body,
             });
         } else {
-            let users=user.obtenerUsuarios()
+            let users = user.obtenerUsuarios();
             for (let i = 0; i < users.length; i++) {
-                if (users[i].email == req.body.email)
-                    if (req.body.password == users[i].password) {
-                        req.session.loggedUser = users[i];
-                        break;
-                    }
+                if (
+                    users[i].email == req.body.email &&
+                    bcrypt.compareSync(req.body.password, users[i].password)
+                ) {
+                    req.session.loggedUser = users[i];
+                    return res.redirect(req.session?.history?.prev || "/");
+                }
             }
             if (!req.session.loggedUser) {
                 return res.render("pages/login", {
@@ -29,7 +31,6 @@ const controller = {
                     old: req.body,
                 });
             }
-            res.redirect("/");
         }
     },
 };
