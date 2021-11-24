@@ -144,8 +144,8 @@ const toggleTheme = () => {
     menuUser?.classList.toggle("dark-menu");
 };
 
-loginContainerButton.classList.add("hover-disable");
-loginContainerButton.style.opacity = "0.5";
+loginContainerButton?.classList.add("hover-disable");
+loginContainerButton && (loginContainerButton.style.opacity = "0.5");
 const loginInputs = loginContainerInput ? [...loginContainerInput] : [];
 loginContainerInput.forEach((input) => {
     input.addEventListener("keyup", (e) => {
@@ -156,6 +156,23 @@ loginContainerInput.forEach((input) => {
             loginContainerButton.disabled = false;
             loginContainerButton.classList.remove("hover-disable");
             loginContainerButton.style.opacity = "1";
+        }
+    });
+});
+registerContainerButton.classList.add("hover-disable");
+registerContainerButton && (registerContainerButton.style.opacity = "0.5");
+const registerInputs = registerContainerInput
+    ? [...registerContainerInput]
+    : [];
+registerContainerInput.forEach((input) => {
+    input.addEventListener("keyup", (e) => {
+        console.log(e.currentTarget.value);
+
+        if (!registerInputs?.filter((x) => x?.value === "").length) {
+            console.log("entre");
+            registerContainerButton.disabled = false;
+            registerContainerButton.classList.remove("hover-disable");
+            registerContainerButton.style.opacity = "1";
         }
     });
 });

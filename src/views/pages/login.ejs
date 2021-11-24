@@ -9,15 +9,13 @@
                 <div class="red-rectangle"></div>
                 <form action="/login" method="post" class="login-container">
                     <h2>¡Hola!</h2>
-                    <input id="email"type="email" placeholder="Tu email"
-                    name="email" value="<%= locals.old && old.email ? old.email
-                    : "" %>" /> <% if (locals.errors && locals.errors["email"])
-                    { %>
+                    <input type="email" placeholder="Tu email" name="email"
+                    value="<%= locals.old && old.email ? old.email : "" %>" />
+                    <% if (locals.errors && locals.errors["email"]) { %>
                     <p class="warning-text"><%= errors["email"].msg %></p>
                     <% } %>
 
                     <input
-                        id="password"
                         type="password"
                         placeholder="Tu contraseña"
                         name="password"
