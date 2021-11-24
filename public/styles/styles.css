@@ -1031,10 +1031,11 @@ h1 {
   font-size: 32px;
   margin-bottom: 2rem;
 }
-.register-input {
+.register-input, .login-input {
   border: none;
   background-color: #ffffff;
 }
+
 
 .register-button {
   background-color: rgba(73, 79, 81, 1);
@@ -1401,10 +1402,11 @@ h1 {
 }
 
 
-.contenedor-input, .contenedor-input-mail, .contenedor-input-password{
+.contenedor-input, .contenedor-input-mail, .contenedor-input-password, .contenedor-input-login{
   display: flex;
   border-bottom: 1px solid grey;
   justify-content: space-between;
+ 
 }
 .contenedor-input-warning{
   border-bottom: 1px solid red;
@@ -1439,12 +1441,5 @@ h1 {
   gap:1rem;
 }
 
-.login-warning{
-  position: absolute;
-  right:44%;
-  top:27%
-}
 
-.input-login-warning{
-  border: 1px solid red;
-}
+
