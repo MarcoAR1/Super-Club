@@ -1012,6 +1012,8 @@ input:focus {
   justify-content: center;
   padding: 48px 32px;
   box-shadow: 0px 5px 5px 0px #888888;
+  
+  
 }
 
 .texto-register {
@@ -1030,11 +1032,8 @@ h1 {
   margin-bottom: 2rem;
 }
 .register-input {
-  margin-bottom: 0.8rem;
-  border-radius: 2rem;
-  color: rgba(153, 153, 153, 1);
-  padding: 8px 16px;
-  border: 1px solid rgba(153, 153, 153, 1);
+  border: none;
+  background-color: #ffffff;
 }
 
 .register-button {
@@ -1042,6 +1041,7 @@ h1 {
   color: white;
   padding: 8px 16px;
   border-radius: 2rem;
+  margin-top: 2rem;
 }
 
 /* Not Found */
@@ -1395,3 +1395,56 @@ h1 {
     max-width: none;
   }
 } */
+.warning, .warning-mail, .warning-password{
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+
+.contenedor-input, .contenedor-input-mail, .contenedor-input-password{
+  display: flex;
+  border-bottom: 1px solid grey;
+  justify-content: space-between;
+}
+.contenedor-input-warning{
+  border-bottom: 1px solid red;
+}
+
+.modal-error{
+  width: 384px;
+  Height: 140px;
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.5);
+  display: none;
+  margin-top:1rem;
+}
+.modal-title{
+  font-weight: 700;
+}
+.modal-text{
+  font-weight: 400;
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.buttons-modal{
+  font-weight: 400;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  gap:1rem;
+}
+
+.login-warning{
+  position: absolute;
+  right:44%;
+  top:27%
+}
+
+.input-login-warning{
+  border: 1px solid red;
+}
